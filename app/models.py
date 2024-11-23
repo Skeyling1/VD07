@@ -6,6 +6,7 @@ def load_user(user_id):
     return User.query.get(int(user_id)) # Эта строчка будет отправлять в БД запрос для поиска определённого юзера по его ID
 
 
+#создаем структуру базы данных
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
@@ -13,4 +14,4 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(60), nullable=False)
 
     def __repr__(self):
-        return f'User {self.username}, email: {self.email}'
+        return f'User {self.username}, email: {self.email}' # Функция, чтобы представить информацию о пользователе в виде одной строки
