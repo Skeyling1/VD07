@@ -21,8 +21,9 @@ class RegistrationForm(FlaskForm):
         if email:
             raise ValidationError('Такая почта уже существует')
 
+
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
-    remember_me = BooleanField('Запомни меня')
+    remember = BooleanField('Запомни меня')
     submit = SubmitField('Sign Up')
