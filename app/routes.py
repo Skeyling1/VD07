@@ -38,10 +38,17 @@ def login():
     return render_template('login.html', form=form, title='Login')
 
 
+@app.route('/change', methods=['GET', 'POST'])
+def change():
+    form = RegistrationForm()
+    return render_template('change.html', form=form, title='Change')
+
+
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
 
 @app.route('/account')
 @login_required
