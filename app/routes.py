@@ -2,7 +2,8 @@ from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user, current_user, login_required
 from app.models import User
 from app import app, db, bcrypt
-from app.forms import RegistrationForm, LoginForm
+from app.forms import RegistrationForm, LoginForm, ChangeForm
+
 
 @app.route('/')
 @app.route('/home')
@@ -40,7 +41,8 @@ def login():
 
 @app.route('/change', methods=['GET', 'POST'])
 def change():
-    form = RegistrationForm()
+
+    form = ChangeForm()
     return render_template('change.html', form=form, title='Change')
 
 

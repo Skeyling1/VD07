@@ -24,8 +24,12 @@
                 {{ form.confirm_password.label }}<br>
                 {{ form.confirm_password(size=64) }}
             </div>
+
             <div>
                 {{ form.submit() }}
             </div>
+        <p>
+            Действующие данные: {{ current_user }}
+        </p>
     </form>
 {% endblock %}
